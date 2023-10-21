@@ -3,4 +3,5 @@
     <string name="hello_string">Choose action:</string>
     <string name="button_gen">Generate a QR code</string>
     <string name="button_scan">Scan QR Code</string>
+    <string name="hint_EText">Add text</string>
 </resources>
