@@ -12,7 +12,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun onClickGoGenerate(view: View){
-        val intent = Intent(this, Activity_GenerateCode::class.java)
+        val intent = Intent(this, ActivityGenerateCodeTest::class.java)
         startActivity(intent)
     }
 
