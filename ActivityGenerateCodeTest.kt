@@ -3,6 +3,8 @@ package com.example.qrapp
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
@@ -30,6 +32,7 @@ class ActivityGenerateCodeTest : AppCompatActivity() {
 
             if (editText.text.toString() == "") {
                 editText.setHintTextColor(Color.RED)
+
             }
 
             else {
@@ -49,4 +52,17 @@ class ActivityGenerateCodeTest : AppCompatActivity() {
 
         }
 }
+
+    // identify toolbar markup
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.icon_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.home -> {finish()}  // if the home button is pressed,  go back to MainActivity
+        }
+        return true
+    }
 }

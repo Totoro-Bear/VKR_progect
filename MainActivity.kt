@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
     }
 
    fun onClickGoScan(view: View){
-        val intent = Intent(this, Activity_ScanCode ::class.java)
+        val intent = Intent(this, ActivityScanCodeTest ::class.java)
         startActivity(intent)
     }
 }
