@@ -53,4 +53,9 @@ dependencies {
     implementation ("com.journeyapps:zxing-android-embedded:4.3.0")
     coreLibraryDesugaring ("com.android.tools:desugar_jdk_libs:2.0.2")
     implementation ("androidx.multidex:multidex:2.0.1")
+
+
+    implementation ("com.google.android.gms:play-services-vision:20.1.3")
+
+    implementation ("com.github.yuriy-budiyev:code-scanner:2.3.2")
 }
