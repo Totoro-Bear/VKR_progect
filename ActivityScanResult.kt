@@ -1,5 +1,6 @@
 package com.example.qrapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -121,7 +122,10 @@ class ActivityScanResult : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
-            R.id.home -> {finish()}  // if the home button is pressed,  go back to MainActivity
+            R.id.home -> {    // if the home button is pressed,  go back to MainActivity
+                val intent = Intent(this, MainActivity ::class.java)
+                startActivity(intent)
+            }
         }
         return true
     }
