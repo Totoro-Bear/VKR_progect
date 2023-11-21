@@ -1,7 +1,14 @@
 <resources>
-    <string name="app_name">QRApp</string>
+    <string name="app_name" translatable="false">QRApp</string>
     <string name="hello_string">Choose action:</string>
     <string name="button_gen">Generate a QR code</string>
     <string name="button_scan">Scan QR Code</string>
     <string name="hint_EText">Add text</string>
+    <string name="home_button" translatable="false">home_button</string>
+    <string name="no_permissions">Not permissions</string>
+    <string name="error">Error</string>
+    <string name="result">Result:</string>
+    <string name="key_value" translatable="false">string</string>
+    <string name="message_result">Harmless: %1$s %4$sMalicious: %2$s  %4$sUndetected: %3$s</string>
+    <string name="message_status">Status: %1$s</string>
 </resources>

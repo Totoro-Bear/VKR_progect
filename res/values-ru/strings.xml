@@ -1,7 +1,11 @@
 <resources>
-    <string name="app_name">QRApp</string>
     <string name="hello_string">Выберите действие:</string>
     <string name="button_gen">Сгенерировать QR-код</string>
     <string name="button_scan">Сканировать QR-код</string>
     <string name="hint_EText">"Введите текст "</string>
+    <string name="no_permissions">Отсутствуют разрешения</string>
+    <string name="error">Ошибка:</string>
+    <string name="result">Результат:</string>
+    <string name="message_result">Отмечен как безвредный: %1$s %4$sОтмечен как вредоносный: %2$s  %4$sБез оценки: %3$s</string>
+    <string name="message_status">Статус запроса: %1$s</string>
 </resources>
