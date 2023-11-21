@@ -53,7 +53,7 @@ dependencies {
     implementation ("com.journeyapps:zxing-android-embedded:4.3.0")
     coreLibraryDesugaring ("com.android.tools:desugar_jdk_libs:2.0.2")
     implementation ("androidx.multidex:multidex:2.0.1")
-
+    implementation ("com.squareup.okhttp3:okhttp:4.10.0")
 
     implementation ("com.google.android.gms:play-services-vision:20.1.3")
 
