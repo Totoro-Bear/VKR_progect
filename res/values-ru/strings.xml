@@ -8,4 +8,8 @@
     <string name="result">Результат:</string>
     <string name="message_result">Отмечен как безвредный: %1$s %4$sОтмечен как вредоносный: %2$s  %4$sБез оценки: %3$s</string>
     <string name="message_status">Статус запроса: %1$s</string>
+    <string name="received_URL">Результат:%2$s%1$s</string>
+    <string name="no_harmless">Не замечен в опасной активности</string>
+    <string name="harmless">Замечен в опасной активности</string>
+    <string name="no_info">Информация отсутствует</string>
 </resources>
