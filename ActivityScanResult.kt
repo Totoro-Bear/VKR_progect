@@ -19,10 +19,11 @@ import java.io.IOException
 class ActivityScanResult : AppCompatActivity() {
 
     private var status = ""
-    private var apiKey = "330f3e566b7dd0b52a13b342bab463159473559684c3a2f4559f4441371df88e"
+    private var apiKeyVT = "330f3e566b7dd0b52a13b342bab463159473559684c3a2f4559f4441371df88e"
+    val apiKeyKasp = "pQe+E0W8RhuJfGppBaRyzg=="
     private var url = "https://www.virustotal.com/api/v3/urls"
+
     private var client = OkHttpClient()
-    //private val checkURL = "https://stackoverflow.com/questions/2989284/what-is-the-max-size-of-localstorage-values"
 
     @OptIn(DelicateCoroutinesApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,7 +33,7 @@ class ActivityScanResult : AppCompatActivity() {
         var checkURL = intent.getStringExtra("${R.string.key_value}")
 
         var textResult = findViewById<TextView>(R.id.tvResult)
-        textResult.text = checkURL
+        textResult.text = getString(R.string.received_URL, checkURL, "\n\n")
 
         val requestBody = FormBody.Builder()
             .add("url", checkURL.toString())
@@ -40,7 +41,7 @@ class ActivityScanResult : AppCompatActivity() {
 
         val request = Request.Builder()
             .url(url)
-            .addHeader("x-apikey", apiKey)
+            .addHeader("x-apikey", apiKeyVT)
             .post(requestBody)
             .build()
 
@@ -61,7 +62,10 @@ class ActivityScanResult : AppCompatActivity() {
 
                 // calling the function for the next request
                 Log.d("prob", finalURL)
-                secondRequest(finalURL)
+                secondRequestVT(finalURL)
+
+                //парсим каспера
+                requestKasperTI(checkURL!!)
             }
 
             catch (e: IOException)
@@ -73,11 +77,11 @@ class ActivityScanResult : AppCompatActivity() {
     }
 
     @OptIn(DelicateCoroutinesApi::class)
-    private fun secondRequest(url2: String) {
+    private fun secondRequestVT(url2: String) {
 
         val request = Request.Builder()
             .url(url2)
-            .addHeader("x-apikey", apiKey)
+            .addHeader("x-apikey", apiKeyVT)
             .get()
             .build()
 
@@ -111,6 +115,43 @@ class ActivityScanResult : AppCompatActivity() {
                 Log.d("error", "$e")
             }
         }
+
+    }
+
+    private fun requestKasperTI(url: String){
+        val urlKasp = "https://opentip.kaspersky.com/api/v1/search/url?request=$url"
+
+        val request = Request.Builder()
+            .url(urlKasp)
+            .addHeader("x-api-key", apiKeyKasp)
+            .build()
+
+        client.newCall(request).enqueue(object : Callback {
+            override fun onFailure(call: Call, e: IOException) {
+                Log.d("loge", "error $e")
+                println("Error occurred: $e")
+            }
+
+            override fun onResponse(call: Call, response: Response) {
+                if (response.isSuccessful) {
+                    val responseBody = response.body?.string()
+                    if (responseBody != null) {
+                        Log.d("loge", responseBody)
+                        val t2 = findViewById<TextView>(R.id.t2)
+                        val status2 = findViewById<TextView>(R.id.tvStatus2)
+                        runOnUiThread {
+                            if ("Green" in responseBody) {t2.text = getString(R.string.no_harmless)}
+                            else if (("Red" in responseBody) or ("Yellow" in responseBody)) {t2.text = getString(R.string.harmless)}
+                            else if ("Grey" in responseBody) {t2.text = getString(R.string.no_info)}
+                            status2.setText("Статус запроса: Выполнено")
+                        }
+                    }
+                }
+                else {
+                    Log.d("loge", "error ${response.code}")
+                }
+            }
+        })
 
     }
 
