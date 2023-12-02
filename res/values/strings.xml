@@ -12,7 +12,17 @@
     <string name="message_result">Harmless: %1$s %4$sMalicious: %2$s  %4$sUndetected: %3$s</string>
     <string name="message_status">Status: %1$s</string>
     <string name="received_URL">Result:%2$s%1$s</string>
-    <string name="no_harmless">Not seen in dangerous activity</string>
     <string name="harmless">Seen in dangerous activity</string>
     <string name="no_info">No information available</string>
+    <string name="data_error">Error receiving data from the site</string>
+    <string name="no_harmless">Not seen in dangerous activity</string>
+    <string name="note_button" translatable="false">note_button</string>
+    <string name="head_note">Why is it important to use this app?</string>
+    <string name="content_note">%1$sToday phishing is the most common type of fraud.%2$s%1$sThe purpose of the phishing attack is to steal personal data, funds from a bank card. One of the methods of phishing attacks is the use of a QR code containing a link to fake websites. QRishing is a name that is a mixture of the terms QR code and phishing.%2$s%1$sThe most common variant of this type of fraud is when QR codes containing a link to fake sites are neatly placed on top of legitimate codes or on advertising posters where the QR code was not provided by the owner of the advertisement.%2$s%1$sThis application will allow you to avoid getting on a malicious resource.</string>
+    <string name="head_manual">Guide</string>
+    <string name="content_manual_part1">%1$sClick the \"Generate QR Code\" button and enter the data in the field to create a QR code image.%2$s%1$sClick the \"Scan QR Code\" button to recognize the QR code.</string>
+    <string name="content_manual_flash">This is the flash icon. Click if you want to use the flash.  Disabled by default.</string>
+    <string name="content_manual_autofocus">This is the autofocus icon. press if you want to use manual focus.  Enabled by default.</string>
+    <string name="content_manual_part2">If you see the message \"Error receiving data from the site\", it is possible that the site is unavailable or there are network problems. Try scanning the QR code again.</string>
+    <string name="content_manual_note">Click this icon if you want to learn more about phishing.</string>
 </resources>

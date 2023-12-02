@@ -5,9 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
+    android:background="@color/back"
     android:gravity="center"
     android:orientation="vertical"
-    android:background="#FFF6E1FB"
     tools:context=".ActivityScanCodeTest">
 
     <TextView
@@ -30,9 +30,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-        <!--app:autoFocusButtonColor="#E91E63"-->
-
-
+    <!--app:autoFocusButtonColor="#E91E63"-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

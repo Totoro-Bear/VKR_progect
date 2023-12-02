@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFF6E1FB"
+    android:background="@color/back"
     tools:context=".MainActivity">
 
     <TextView
@@ -27,6 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="369dp"
+        android:backgroundTint="#37745B"
         android:onClick="onClickGoGenerate"
         android:text="@string/button_gen"
         android:textSize="16sp"
@@ -43,6 +44,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="229dp"
+        android:backgroundTint="#37745B"
         android:onClick="onClickGoScan"
         android:text="@string/button_scan"
         android:textSize="16sp"

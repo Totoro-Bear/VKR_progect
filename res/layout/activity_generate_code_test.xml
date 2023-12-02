@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F6E1FB"
+    android:background="@color/back"
     tools:context=".ActivityGenerateCodeTest">
 
     <EditText
@@ -30,6 +30,7 @@
         android:layout_marginStart="25dp"
         android:layout_marginEnd="25dp"
         android:layout_marginBottom="144dp"
+        android:backgroundTint="#37745B"
         android:text="@string/button_gen"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"

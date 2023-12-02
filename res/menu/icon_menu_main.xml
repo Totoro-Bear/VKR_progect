@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:title="@string/note_button"
+        android:id="@+id/note"
+        android:icon="@drawable/icon_note"
+        android:orderInCategory="1"
+        app:showAsAction="ifRoom"
+        />
+
+    <item
+        android:title="@string/note_button"
+        android:id="@+id/manual"
+        android:icon="@drawable/icon_manual"
+        android:orderInCategory="2"
+        app:showAsAction="ifRoom"
+        />
+
+
+</menu>
