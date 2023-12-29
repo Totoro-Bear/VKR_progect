@@ -39,11 +39,11 @@ class ActivityScanResult : AppCompatActivity() {
 
         checkURL = intent.getStringExtra("${R.string.key_value}").toString()
 
-        var textResult = findViewById<TextView>(R.id.tvResult)
+        val textResult = findViewById<TextView>(R.id.tvResult)
         textResult.text = getString(R.string.received_URL, checkURL, "\n\n")
 
         val requestBody = FormBody.Builder()
-            .add("url", checkURL.toString())
+            .add("url", checkURL)
             .build()
 
         request = Request.Builder()
@@ -56,6 +56,7 @@ class ActivityScanResult : AppCompatActivity() {
             try {
                 // The first request for VirusTotal
                 val response = client.newCall(request).execute()
+                Log.d ("test", response.toString())
                 if ("code=200" in response.toString()) {
                     val jsonResponse = response.body?.string()
 
@@ -70,6 +71,12 @@ class ActivityScanResult : AppCompatActivity() {
                     Log.d("prob", finalURL)
                     secondRequestVT(finalURL)
                 }
+
+                else if ("code=400" in response.toString()) {  // this is probably a text
+                    // we display the message  on the screen
+                    val tvStatus = findViewById<TextView>(R.id.tvStatus)
+                    runOnUiThread {tvStatus.text = getString(R.string.data_text)}
+                }
                 else {
                     // we display the error on the screen
                     val tvStatus = findViewById<TextView>(R.id.tvStatus)
@@ -78,7 +85,7 @@ class ActivityScanResult : AppCompatActivity() {
                 }
 
                 // parsing of Kaspersky Threat Intelligence Portal
-                requestKasperTI(checkURL!!)
+                requestKasperTI(checkURL)
             }
 
             catch (e: IOException)
@@ -145,7 +152,18 @@ class ActivityScanResult : AppCompatActivity() {
     }
 
     private fun requestKasperTI(url: String){         // passing the url to be checked
-        val urlKasp = "https://opentip.kaspersky.com/api/v1/search/url?request=$url"
+
+        val url = url.substringAfterLast("://")
+        val method : String
+        if ("/" in url) {
+            method = "url"
+        }
+        else {
+            method = "domain"
+        }
+        Log.d("checkurl", "$url, $method")
+
+        val urlKasp = "https://opentip.kaspersky.com/api/v1/search/$method?request=$url"
 
         request = Request.Builder()
             .url(urlKasp)
@@ -168,9 +186,21 @@ class ActivityScanResult : AppCompatActivity() {
                             if ("Green" in responseBody) {t2.text = getString(R.string.no_harmless)}
                             else if (("Red" in responseBody) or ("Yellow" in responseBody)) {t2.text = getString(R.string.harmless)}
                             else if ("Grey" in responseBody) {t2.text = getString(R.string.no_info)}
+                            else {t2.text = getString(R.string.no_permissions)}
                         }
                     }
                 }
+
+                else if (response.code == 400) {
+                    // if an error occurred or data could not be retrieved
+                    Log.d("loge", "error ${response.code}")
+
+                    // we display the error on the screen
+                    val status2 = findViewById<TextView>(R.id.tvStatus2)
+                    runOnUiThread {status2.text = getString(R.string.data_text) }
+
+                }
+
                 else {
                     // if an error occurred or data could not be retrieved
                     Log.d("loge", "error ${response.code}")

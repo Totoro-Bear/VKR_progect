@@ -30,13 +30,11 @@ class ActivityGenerateCodeTest : AppCompatActivity() {
         // when pressed, a Qr code is generated
         button.setOnClickListener {
 
-            if (editText.text.toString() == "") {
+            if (editText.text.toString() == "") {  // if the input field is empty and the button is pressed, then highlight it in red
                 editText.setHintTextColor(Color.RED)
-
             }
 
             else {
-
                 val multiFormatWriter = MultiFormatWriter()  // for create binary matrix
                 val barcodeEncoder = BarcodeEncoder()  //for converts binary matrix to a bitmap image
 
