@@ -9,12 +9,12 @@
     <string name="error">Error</string>
     <string name="result">Result:</string>
     <string name="key_value" translatable="false">string</string>
-    <string name="message_result">Harmless: %1$s %4$sMalicious: %2$s  %4$sUndetected: %3$s</string>
+    <string name="message_result">Malicious: %2$s  %4$sHarmless: %1$s %4$sUndetected: %3$s</string>
     <string name="message_status">Status: %1$s</string>
     <string name="received_URL">Result:%2$s%1$s</string>
     <string name="harmless">Seen in dangerous activity</string>
     <string name="no_info">No information available</string>
-    <string name="data_error">Error receiving data from the site</string>
+    <string name="data_error">Error receiving data from the site. Try again.</string>
     <string name="no_harmless">Not seen in dangerous activity</string>
     <string name="note_button" translatable="false">note_button</string>
     <string name="head_note">Why is it important to use this app?</string>
@@ -25,4 +25,5 @@
     <string name="content_manual_autofocus">This is the autofocus icon. press if you want to use manual focus.  Enabled by default.</string>
     <string name="content_manual_part2">If you see the message \"Error receiving data from the site\", it is possible that the site is unavailable or there are network problems. Try scanning the QR code again.</string>
     <string name="content_manual_note">Click this icon if you want to learn more about phishing.</string>
+    <string name="data_text">This is probably a text</string>
 </resources>

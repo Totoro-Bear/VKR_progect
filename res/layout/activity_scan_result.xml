@@ -31,7 +31,8 @@
             android:background="#78B39B"
             android:onClick="Copy"
             app:srcCompat="@drawable/icon_copy"
-            app:tint="#050505" />
+            app:tint="#050505"
+            tools:text="copy" />
 
     </LinearLayout>
 
