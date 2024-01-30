@@ -3,15 +3,15 @@ package com.example.qrapp
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.TextView
-
-import android.util.Log
 import android.view.View
+import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -19,6 +19,7 @@ import kotlinx.coroutines.launch
 import okhttp3.*
 import org.json.JSONObject
 import java.io.IOException
+
 
 class ActivityScanResult : AppCompatActivity() {
 
